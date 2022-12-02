@@ -1,0 +1,16 @@
+HOW TO RUN JMETER FROM COMMAND LINE
+
+Open jmeter, right click on Test Plan , click on Add, click on Thread users, select Thread group
+Right click on thread group , click on Add, click on Sampler, select HTTP Request
+In the HTTP Request page:
+Enter server name example:  lifecharger.org
+Enter the path example:  /10_Best_Smartphones
+Add a listener to check that it runs fine. save and run your test.(Remove the listener after the test passes)
+Increase the number of users in the thread group example 100 or 1000 users, you can increase the loop count(iteration also). click on save
+Open your command prompt , change directory to the location of your jmeter bin folder on your system and click on enter eg:
+cd C:\Users\hp\Downloads\programs\apache-jmeter-5.5\apache-jmeter-5.5\bin
+Next enter the command: jmeter -n -t copy and paste the location of your jmeter test script.jmx -l copy and paste the location of your csv test resultfile.csv the click on enter
+
+EXAMPLE: C:\Users\hp>cd C:\Users\hp\Downloads\programs\apache-jmeter-5.5\apache-jmeter-5.5\bin
+
+C:\Users\hp\Downloads\programs\apache-jmeter-5.5\apache-jmeter-5.5\bin>jmeter -n -t C:\Users\hp\Desktop\Jmeter\JmeterCommandLineTest.jmx -l C:\Users\hp\Desktop\Jmeter\CommandLineTestResult.csv
