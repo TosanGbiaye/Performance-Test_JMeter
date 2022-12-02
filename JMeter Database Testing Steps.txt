@@ -1,0 +1,29 @@
+DATABASE TESTING WITH JMETER
+Setup database in your system eg MySQL.
+Download mysqL connector jar file, unzip n extract it.
+Copy the jar file and paste it in the jmeter lib folder and then start jmeter.
+Open jmeter >> Right click on Test Plan, click on Add, click on Thread users,select Thread group.
+Right click on thread group , click on Add, select Config Element , click on JDBC Connection Confiuration
+Enter a variable name in the Variable Name for created pool tab(e.g test).
+Scroll down to Database Connection Configuration(This setup is very important for your test to run).
+Database URL:jdbc:mysql://serverName:portNum/SchemaName example jdbc:mysql://localhost:3306/sql_store
+JDBC Driver Class:click on the dropdown and select com.mysql.jdbc.Driver
+Enter your database username for instance your mysql username e.g (root)
+Enter your database password
+Right click on Thread group, click on Add, click on Sampler, select JDBC Request
+Name your JDBC Request example JDBC Request1
+Variable Name of pool declared in JDBC Connection Configuration: enter the same varaible name use entered in JDBC connection confiuration eg (test)
+Query Type: Choose Select Statement
+Enter query:  SELECT * FROM table_name on mysql  eg SELECT * FROM products
+Add Listeners. Right click on Thread group, click on Add, click on Listeners, select any eg View Result Tree, View Results in Table save your test and run
+Note that You can increase the number of users, loop count and ramp-up period and re-run your test. 
+ADDITIONAL: ADD MORE JDBC REQUEST
+Right click on thread group, click on Add, click on Sampler, select JDBC Request
+Name your JDBC Request eg JDBC Request2
+Enter your variable name (same Variable name as in JDBC Connection Configuration )eg test
+Query Type Select Update Statement
+Enter your query eg. INSERT INTO SchemaName.tableName(table headings) then enter the values in the next line. 
+Example: 
+INSERT INTO sql_store.products(product_id,name,quantity_in_stock,unit_price)
+VALUES(11,'Grilled Chiken',73,4.05)
+save and run.
