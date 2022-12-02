@@ -1,0 +1,9 @@
+DATA DRIVEN TEST WITH JMETER
+
+Open Jmeter, click on Test Plan, Add, click on thread users, select thread group
+Right click on thread group, click on Add, click on Config Element, click on CSV Data Set Config
+Click on browse to select the csv file you must have already created( To create csv file: Go to your directory , click on new> Test document> name it anything you like.csv))
+Enter some data variables in your csv file.
+Right clickon thread group, click on Add, Sampler, click on Java Request.
+In the name field of your java Request name the first rows of your variables like this for instance:  ${Name} ${Age} ${Location)
+Add Listeners - View Result Tree , View Results in Table

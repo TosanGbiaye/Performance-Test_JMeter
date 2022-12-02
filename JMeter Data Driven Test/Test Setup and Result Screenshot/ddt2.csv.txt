@@ -1,0 +1,6 @@
+Name, Age, Location
+Titus, 21, Ibadan
+Philip, 44, Lagos
+Bayo, 53, Abuja
+Jane, 28, Edo
+Ada, 32, Ekiti
